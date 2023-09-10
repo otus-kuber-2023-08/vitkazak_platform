@@ -1,7 +1,7 @@
 # vitkazak_platform
 vitkazak Platform repository
 
-# Выполнено ДЗ №
+# Выполнено ДЗ №1
 
  - [+] Основное ДЗ
  - [+] Задание со *
