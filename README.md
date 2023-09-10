@@ -21,6 +21,7 @@ vitkazak Platform repository
 ## Задание со *
  - Причиной, по которой падал pod frontend, было отсутствие переменных окружения, необходимых для работы приложения.
  - Создан манифест kubernetes-intro/frontend-pod-healthy.yaml, в котором для контейнера frontend указаны необходимые переменные окружения.
+   
 ![Снимок экрана от 2023-09-10 15-59-37](https://github.com/otus-kuber-2023-08/vitkazak_platform/assets/31851694/b81e41b2-3cda-4679-817b-9d14c2d36c85)
 
 
