@@ -10,7 +10,7 @@ vitkazak Platform repository
  - Установка на виртуалку под ОС Linux (Ubuntu 22.04) kubectl, docker, minikube
  - Установлен dashboard для minikube, ознакомился с его интерфейсом и возможностями
  - Установлен k9s, ознакомился с его интерфейсом и возможностями
- - Проверил перезапуск подов в namespace kube-system. Посмотрел разнве механизмы перезапуска данных подов чрез kubectl describe
+ - Проверил перезапуск подов в namespace kube-system. Посмотрел разные механизмы перезапуска данных подов чрез kubectl describe
  - Был собран образ веб-сервера nginx через Dockerfile, учитывая все требования из задания и выложен в публичный репо как vitkazak/k8s-webserver:latest
  - Написан манифест web-pod.yaml с init-контейнером
  - Запустил приложение и получил локально к нему доступ через kubectl port-forward а также через kube-forwarder
