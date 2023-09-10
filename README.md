@@ -33,4 +33,4 @@ vitkazak Platform repository
  - Перейти по ссылке http://localhost:8000
 
 ## PR checklist:
- - [ ] Выставлен label с темой домашнего задания
+ - [+] Выставлен label с темой домашнего задания
