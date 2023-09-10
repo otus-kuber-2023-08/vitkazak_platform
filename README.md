@@ -14,6 +14,7 @@ vitkazak Platform repository
  - Был собран образ веб-сервера nginx через Dockerfile, учитывая все требования из задания и выложен в публичный репо как vitkazak/k8s-webserver:latest
  - Написан манифест web-pod.yaml с init-контейнером
  - Запустил приложение и получил локально к нему доступ через kubectl port-forward а также через kube-forwarder
+![Снимок экрана от 2023-09-10 15-58-25](https://github.com/otus-kuber-2023-08/vitkazak_platform/assets/31851694/71f77f95-9f86-402c-8034-eee173cf2e4c)
  - Собран образ hipstershop frontend и выложен на Docker Hub как vitkazak/hipster-frontend:v0.0.1
  - Запустил через ad-hoc команду
 
