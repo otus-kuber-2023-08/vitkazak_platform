@@ -26,10 +26,11 @@ vitkazak Platform repository
 
 
 ## Как запустить проект:
- - Например, запустить команду X в директории Y
+ - Из дирректории kubernetes-intro запустить: kubectl apply -f web-pod.yaml
+ - Дать доступ команлой: kubectl port-forward pods/web 8000:8000
 
 ## Как проверить работоспособность:
- - Например, перейти по ссылке http://localhost:8080
+ - Перейти по ссылке http://localhost:8000
 
 ## PR checklist:
  - [ ] Выставлен label с темой домашнего задания
