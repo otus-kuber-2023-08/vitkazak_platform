@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: payment-service
+  labels:
+    app: paymentservice
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: paymentservice
+  template:
+    metadata:
+      labels:
+        app: paymentservice
+    spec:
+      containers:
+      - name: server
+        image: vitkazak/hipster-frontend:v0.0.2
+        readinessProbe:
+          initialDelaySeconds: 10
+          httpGet:
+            path: "/_health"
+            port: 8080
+            httpHeaders:
+            - name: "Cookie"
+              value: "shop_session-id=x-readiness-probe"
+        livenessProbe:
+          initialDelaySeconds: 10
+          httpGet:
+            path: "/_health"
+            port: 8080
+            httpHeaders:
+            - name: "Cookie"
+              value: "shop_session-id=x-liveness-probe"
+        env:
+        - name: AD_SERVICE_ADDR
+          value: "ad"
+        - name: CART_SERVICE_ADDR
+          value: "cart"
+        - name: CHECKOUT_SERVICE_ADDR
+          value: "checkout"
+        - name: CURRENCY_SERVICE_ADDR
+          value: "currency"
+        - name: PRODUCT_CATALOG_SERVICE_ADDR
+          value: "product-catalog"
+        - name: RECOMMENDATION_SERVICE_ADDR
+          value: "recommendation"
+        - name: SHIPPING_SERVICE_ADDR
+          value: "shipping"

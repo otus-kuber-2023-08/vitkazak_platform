@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: payment-service
+  labels:
+    app: paymentservice
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: paymentservice
+  template:
+    metadata:
+      labels:
+        app: paymentservice
+    spec:
+      containers:
+      - name: server
+        image: vitkazak/hipster-frontend:v0.0.1
+        env:
+        - name: AD_SERVICE_ADDR
+          value: "ad"
+        - name: CART_SERVICE_ADDR
+          value: "cart"
+        - name: CHECKOUT_SERVICE_ADDR
+          value: "checkout"
+        - name: CURRENCY_SERVICE_ADDR
+          value: "currency"
+        - name: PRODUCT_CATALOG_SERVICE_ADDR
+          value: "product-catalog"
+        - name: RECOMMENDATION_SERVICE_ADDR
+          value: "recommendation"
+        - name: SHIPPING_SERVICE_ADDR
+          value: "shipping"
