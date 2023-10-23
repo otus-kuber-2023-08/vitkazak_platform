@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: web
+  labels:
+    app: web
+spec:
+  containers:
+  - name: web
+    image: docker.io/vitkazak/k8s-webserver
+    readinessProbe: # Добавим проверку готовности
+      httpGet: # веб-сервера отдавать
+        path: /index.html # контент
+        port: 80
+    livenessProbe:
+      tcpSocket: { port: 8000 }
+    volumeMounts:
+    - name: app
+      mountPath: /app
+      readOnly: true
+  initContainers:
+  - name: init
+    image: busybox:1.31.0
+    command: ['sh', '-c', 'wget -O- https://tinyurl.com/otus-k8s-intro | sh']
+    volumeMounts:
+    - name: app
+      mountPath: /app
+      readOnly: false
+  volumes:
+  - name: app
+    emptyDir: {}
